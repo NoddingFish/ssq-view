@@ -1,3 +1,100 @@
+<style lang="scss" scoped>
+.scan-radius {
+  border-radius: 10px;
+}
+
+.main-view {
+  min-height: 650px;
+  height: calc(100vh - 190px);
+  margin-bottom: 80px;
+}
+
+.shadow {
+  box-shadow: 0 0 10px rgb(0 0 0 / 6%);
+}
+
+.order-view {
+  background-color: #b26d6d;
+  height: calc(100vh - 200px);
+  margin-bottom: 10px;
+  padding: 10px 10px 10px 20px;
+}
+
+.goods-view {
+  min-height: 440px;
+  height: calc(100vh - 400px);
+  background-color: #fff;
+  padding: 10px 10px 10px 20px;
+
+  .view-table {
+    height: calc(100vh - 500px);
+    min-height: 340px;
+    overflow: auto
+  }
+}
+
+.log-view {
+  min-height: 650px;
+  height: calc(100vh - 190px);
+  background-color: #fff;
+  padding: 10px 10px 10px 20px;
+
+  .view-table {
+    height: calc(100vh - 290px);
+    min-height: 550px;
+    overflow: auto
+  }
+}
+
+.scan-header {
+  font-size: 16px;
+  color: #333333;
+  font-weight: 500;
+}
+
+.scan-text {
+  color: #666666;
+}
+
+::v-deep {
+  .scan-text-refund {
+    color: #FF3D3D;
+  }
+
+  tr.scan-text-check {
+    color: white;
+    background-color: #94c694;
+
+    &:hover > td {
+      background-color: #94c694;
+    }
+  }
+}
+
+.scan-num {
+  color: #F56C6C;
+}
+
+.scan-table {
+  color: #697FA1;
+}
+
+.scan-page {
+  position: absolute;
+  bottom: 10px;
+  right: 10px
+}
+
+.no-data-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 120px;
+  }
+}
+</style>
 <template>
   <div class="home">
     <el-menu
@@ -22,15 +119,32 @@
         </el-submenu>
       </el-submenu>
     </el-menu>
-    <el-row>
-      <el-button type="danger" v-html="'01'" circle></el-button>
-      <el-button type="danger" v-html="'12'" circle></el-button>
-      <el-button type="danger" v-html="'18'" circle></el-button>
-      <el-button type="danger" v-html="'19'" circle></el-button>
-      <el-button type="danger" v-html="'27'" circle></el-button>
-      <el-button type="danger" v-html="'30'" circle></el-button>
-      <el-button type="primary" v-html="'02'" circle></el-button>
-    </el-row>
+    <div class="main-view scan-radius">
+      <el-row>
+        <div>
+          <el-row type="flex" justify="center" :gutter="10" style="margin: 0">
+            <el-col :span="12">
+              <div class="grid-content order-view scan-radius shadow">
+                <el-row>
+                  <el-button type="danger" v-html="'01'" circle></el-button>
+                  <el-button type="danger" v-html="'08'" circle></el-button>
+                  <el-button type="danger" v-html="'18'" circle></el-button>
+                  <el-button type="danger" v-html="'19'" circle></el-button>
+                  <el-button type="danger" v-html="'27'" circle></el-button>
+                  <el-button type="danger" v-html="'30'" circle></el-button>
+                  <el-button type="primary" v-html="'02'" circle></el-button>
+                </el-row>
+              </div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content order-view scan-radius shadow">
+
+              </div>
+            </el-col>
+          </el-row>
+        </div>
+      </el-row>
+    </div>
   </div>
 </template>
 <script>
