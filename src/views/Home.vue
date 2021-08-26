@@ -3,10 +3,16 @@
   border-radius: 10px;
 }
 
+.el-row {
+  margin-bottom: 20px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .main-view {
   min-height: 650px;
-  height: calc(100vh - 190px);
-  margin-bottom: 80px;
+  height: calc(100vh - 130px);
 }
 
 .shadow {
@@ -14,10 +20,21 @@
 }
 
 .order-view {
-  background-color: #b26d6d;
+  //background-color: #b26d6d;
   height: calc(100vh - 200px);
-  margin-bottom: 10px;
-  padding: 10px 10px 10px 20px;
+  //padding: 10px 10px 10px 20px;
+  min-height: 500px;
+  overflow: auto;
+  padding: 20px;
+}
+
+.ssq-date-text {
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.color-1 {
+  color: #909399;
 }
 
 .goods-view {
@@ -94,6 +111,17 @@
     width: 120px;
   }
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  //background-color: #a1a3a9;
+  background-color: #F56C6C;
+  border-radius: 3px;
+}
 </style>
 <template>
   <div class="home">
@@ -105,18 +133,11 @@
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b">
-      <el-menu-item index="1">处理中心</el-menu-item>
+      <el-menu-item index="1">双色球</el-menu-item>
       <el-submenu index="2" style="position: absolute;right: 10px">
         <template slot="title">打盹会儿</template>
-        <el-menu-item index="2-1">选项1</el-menu-item>
-        <el-menu-item index="2-2">选项2</el-menu-item>
-        <el-menu-item index="2-3">选项3</el-menu-item>
-        <el-submenu index="2-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="2-4-1">选项1</el-menu-item>
-          <el-menu-item index="2-4-2">选项2</el-menu-item>
-          <el-menu-item index="2-4-3">选项3</el-menu-item>
-        </el-submenu>
+        <el-menu-item index="2-1">个人中心</el-menu-item>
+        <el-menu-item index="2-2">退出</el-menu-item>
       </el-submenu>
     </el-menu>
     <div class="main-view scan-radius">
@@ -126,13 +147,293 @@
             <el-col :span="12">
               <div class="grid-content order-view scan-radius shadow">
                 <el-row>
-                  <el-button type="danger" v-html="'01'" circle></el-button>
-                  <el-button type="danger" v-html="'08'" circle></el-button>
-                  <el-button type="danger" v-html="'18'" circle></el-button>
-                  <el-button type="danger" v-html="'19'" circle></el-button>
-                  <el-button type="danger" v-html="'27'" circle></el-button>
-                  <el-button type="danger" v-html="'30'" circle></el-button>
-                  <el-button type="primary" v-html="'02'" circle></el-button>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="ssq-date-text" :span="6">
+                    第 2021002 期开奖结果
+                  </el-col>
+                  <el-col :span="12">
+                    <el-button type="danger" v-html="'01'" circle></el-button>
+                    <el-button type="danger" v-html="'08'" circle></el-button>
+                    <el-button type="danger" v-html="'18'" circle></el-button>
+                    <el-button type="danger" v-html="'19'" circle></el-button>
+                    <el-button type="danger" v-html="'27'" circle></el-button>
+                    <el-button type="danger" v-html="'30'" circle></el-button>
+                    <el-button type="primary" v-html="'02'" circle></el-button>
+                  </el-col>
+                  <el-col class="ssq-date-text color-1" :span="6">
+                    开奖日期：2021-08-26
+                  </el-col>
                 </el-row>
               </div>
             </el-col>
@@ -145,6 +446,9 @@
         </div>
       </el-row>
     </div>
+    <el-footer>
+        <div>Copyright © 2021.All rights reserved.</div>
+    </el-footer>
   </div>
 </template>
 <script>
