@@ -267,23 +267,15 @@
   </div>
 </template>
 <script>
+
+import { list } from '@/api/ssq'
 export default {
   data () {
     return {
       activeIndex: '1',
       activeIndex2: '1',
       tabValue: 'nextForecast',
-      ssqNumbers: [
-        { ssq_id: 2020116, date: '2020-11-19', red1: 5, red2: 6, red3: 14, red4: 16, red5: 19, red6: 27, blue: 2 },
-        { ssq_id: 2020116, date: '2020-11-19', red1: 5, red2: 6, red3: 14, red4: 16, red5: 19, red6: 27, blue: 10 },
-        { ssq_id: 2020116, date: '2020-11-19', red1: 5, red2: 6, red3: 14, red4: 16, red5: 19, red6: 27, blue: 10 },
-        { ssq_id: 2020116, date: '2020-11-19', red1: 5, red2: 6, red3: 14, red4: 16, red5: 19, red6: 27, blue: 10 },
-        { ssq_id: 2020116, date: '2020-11-19', red1: 5, red2: 6, red3: 14, red4: 16, red5: 19, red6: 27, blue: 10 },
-        { ssq_id: 2020116, date: '2020-11-19', red1: 5, red2: 6, red3: 14, red4: 16, red5: 19, red6: 27, blue: 10 },
-        { ssq_id: 2020116, date: '2020-11-19', red1: 5, red2: 6, red3: 14, red4: 16, red5: 19, red6: 27, blue: 10 },
-        { ssq_id: 2020116, date: '2020-11-19', red1: 5, red2: 6, red3: 14, red4: 16, red5: 19, red6: 27, blue: 10 },
-        { ssq_id: 2020116, date: '2020-11-19', red1: 5, red2: 6, red3: 14, red4: 16, red5: 19, red6: 27, blue: 10 }
-      ],
+      ssqNumbers: [],
       ssqDetail: [
         { option: '一等奖', num: 291921, amount: 5000000 },
         { option: '二等奖', num: 291921, amount: 5000000 },
@@ -293,6 +285,16 @@ export default {
         { option: '六等奖', num: 291921, amount: 5000000 }
       ]
     }
+  },
+  created () {
+    const queryData = {
+      page: 1,
+      limit: 20
+    }
+    list(queryData).then(res => {
+      console.log('res', res)
+      this.ssqNumbers = res.data.lists
+    }).catch(() => {})
   },
   methods: {
     handleSelect (key, keyPath) {
