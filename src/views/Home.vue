@@ -268,13 +268,17 @@
 </template>
 <script>
 
-import { list } from '@/api/ssq'
+import { list, info } from '@/api/ssq'
 export default {
   data () {
     return {
       activeIndex: '1',
       activeIndex2: '1',
       tabValue: 'nextForecast',
+      queryLists: {
+        page: 1,
+        limit: 20
+      },
       ssqNumbers: [],
       ssqDetail: [
         { option: '一等奖', num: 291921, amount: 5000000 },
@@ -287,18 +291,25 @@ export default {
     }
   },
   created () {
-    const queryData = {
-      page: 1,
-      limit: 20
-    }
-    list(queryData).then(res => {
-      console.log('res', res)
-      this.ssqNumbers = res.data.lists
-    }).catch(() => {})
+    this.getLists()
+    this.getInfo()
   },
   methods: {
     handleSelect (key, keyPath) {
       console.log(key, keyPath)
+    },
+    getLists () {
+      const queryData = this.queryLists
+      list(queryData).then(res => {
+        console.log('res', res)
+        this.ssqNumbers = res.data.lists
+      }).catch(() => {})
+    },
+    getInfo (ssq_id = 0) {
+      info(ssq_id).then(res => {
+        console.log('res', res)
+        this.ssqDetail = res.data
+      }).catch(() => {})
     }
   }
 }

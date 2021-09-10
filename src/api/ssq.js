@@ -7,3 +7,11 @@ export function list (data) {
     data
   })
 }
+
+export function info (data) {
+  return request({
+    url: '/info',
+    method: 'get',
+    data
+  })
+}
